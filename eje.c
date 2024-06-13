@@ -1,37 +1,19 @@
-/*Crea un arreglo de 20 posiciones 
-aignale a cada elemento un valor
-calcula el promedio de todos los elementos
-calcula la multiplicacion de todos los elementos*/
-#include <stdio.h>
-int main() {
-    int arreglo[20];
-    int i = 0;
-    while (i < 20) {
-        arreglo[i] = i + 1;
-        i++;
-    }
-    int suma = 0;
-    i = 0;
-    while (i < 20) {
-        suma += arreglo[i];
-        i++;
-    }
-    float promedio = suma / 20.0;
-    long multiplicacion = 1;
-    i = 0;
-    while (i < 20) {
-        multiplicacion *= arreglo[i];
-        i++;
-    }
-    printf("Elementos del arreglo:\n");
-    i = 0;
-    while (i < 20) {
-        printf("%d ", arreglo[i]);
-        i++;
-    }
-    printf("\n"); 
-    printf("El promedio de los elementos es: %.2f\n", promedio);
-    printf("La multiplicacion de los elementos es: %ld\n", multiplicacion);
+#include<stdio.h>
+float promedio (float a, float b);
 
+int main (){
+    float a=5;
+    float b=10; 
+    float prom;
+    prom = promedio(a, b);
+    printf ("el promedio es: %2.1f\n", prom);
     return 0;
+}
+
+float promedio (float a, float b){
+    float prom;
+    a=a+3;
+    b=b+3;
+    prom =(a+b)/2;
+    return prom;
 }
