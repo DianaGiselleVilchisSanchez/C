@@ -1,28 +1,43 @@
 #include <stdio.h>
-#include <string.h>
 
-int main() {
-    char palabra[100];
-    int letras[26]; 
-    
-    printf("Ingrese una palabra: ");
-    scanf("%s", palabra); 
-    
-    for(int i = 0; i < strlen(palabra); i++) {
-        
-        if(palabra[i] >= 'A' && palabra[i] <= 'Z') {
-            palabra[i] += 'a' - 'A';
-        }
-    
-        if(palabra[i] >= 'a' && palabra[i] <= 'z') {
-            letras[palabra[i] - 'a']++;
-        }
-    }
-    printf("Ocurrencias de cada letra en la palabra:\n");
-    for(int i = 0; i < 26; i++) {
-        if(letras[i] > 0) {
-            printf("%c = %d\n", 'a' + i, letras[i]);
-        }
-    }
+struct CD {
+    char titulo [100];
+    char artista [50];
+    int numcanciones;
+    int anio;
+    int precio;
+};
+
+int main(void) {
+    struct CD cd1;
+    char titulo;
+    char artista;
+    int numcanciones;
+    int anio;
+    int precio;
+
+    printf("Ingresa el título del CD: ");
+    scanf("%s", cd1.titulo);
+
+    printf("Ingresa el artista del CD: ");
+    scanf("%s", cd1.artista);
+
+    printf("Ingresa el número de canciones: ");
+    scanf("%d", &cd1.numcanciones);
+
+    printf("Ingresa el año del CD: ");
+    scanf("%d", &cd1.anio);
+
+    printf("Ingresa el precio: ");
+    scanf("%d", &cd1.precio);
+
+    printf("\n");
+    printf("datos:\n");
+    printf("Título: %s", cd1.titulo);
+    printf("\n");
+    printf("Artista: %s\n", cd1.artista);
+    printf("Número de canciones: %d\n", cd1.numcanciones);
+    printf("Año: %d\n", cd1.anio);
+    printf("Precio: %d\n", cd1.precio);
     return 0;
 }
