@@ -1,19 +1,24 @@
-#include<stdio.h>
-float promedio (float a, float b);
+#include <stdio.h>
+#include <stdlib.h>
 
-int main (){
-    float a=5;
-    float b=10; 
-    float prom;
-    prom = promedio(a, b);
-    printf ("el promedio es: %2.1f\n", prom);
+int main() {
+    int x;
+    int * arreglo;
+    printf("Ingrese el tamaño del arreglo: ");
+    scanf("%d", &x);
+    arreglo = (int *)malloc (x * sizeof(int));
+    
+    if(arreglo == NULL)  (exit (1));
+    for (int i = 0; i < x; i++) {
+        printf("Ingrese el valor numero %d:\n", i+1);
+        scanf("%d", &arreglo[i]);
+    }
+    printf("El arreglo es:\n");
+    for (int i=0; i<x; i++) {
+        printf("%d ", arreglo[i]);
+        printf ("\n");
+    }
+    
+    free(arreglo);
     return 0;
-}
-
-float promedio (float a, float b){
-    float prom;
-    a=a+3;
-    b=b+3;
-    prom =(a+b)/2;
-    return prom;
 }
